@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Microsoft.AI.Wcf", "Shared\Microsoft.AI.Wcf.shproj", "{A9362B74-DDDA-4EAF-8BD8-E165BE426883}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AI.Wcf.Net45", "net45\Microsoft.AI.Wcf.Net45.csproj", "{2DBB5FB7-F219-4999-BDBB-25EB6355C808}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AI.Wcf.Net462", "net462\Microsoft.AI.Wcf.Net462.csproj", "{2DBB5FB7-F219-4999-BDBB-25EB6355C808}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{271B8126-6261-4C26-92A7-83AD5729F26C}"
 EndProject
@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGet", "NuGet\NuGet.csproj
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Microsoft.AI.Wcf.Tests", "Shared.Tests\Microsoft.AI.Wcf.Tests.shproj", "{FA34505D-857B-4CC2-9D5D-C5FB74A75CB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AI.Wcf.Tests.Net45", "net45.tests\Microsoft.AI.Wcf.Tests.Net45.csproj", "{62BC21BD-6A9B-4CEF-8F31-5DF2570A0EEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AI.Wcf.Tests.Net462", "net462.tests\Microsoft.AI.Wcf.Tests.Net462.csproj", "{62BC21BD-6A9B-4CEF-8F31-5DF2570A0EEA}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

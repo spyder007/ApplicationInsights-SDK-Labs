@@ -7,7 +7,7 @@
     using Microsoft.ApplicationInsights.Wcf.Tests.Service;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-#if NET45
+#if NET462
     [TestClass]
     public class AsyncStackTests
     {
@@ -155,5 +155,5 @@
             Assert.AreEqual(request.Context.Operation.Name, dependency.Context.Operation.Name);
         }
     }
-#endif // NET45
+#endif // NET462
 }

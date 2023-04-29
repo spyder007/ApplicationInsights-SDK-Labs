@@ -5,8 +5,8 @@
       Semantic Version. See http://semver.org for full details. 
       Update for every public release. 
     -->
-    <SemanticVersionMajor>0</SemanticVersionMajor>
-    <SemanticVersionMinor>28</SemanticVersionMinor>
+    <SemanticVersionMajor>2</SemanticVersionMajor>
+    <SemanticVersionMinor>21</SemanticVersionMinor>
     <SemanticVersionPatch>0</SemanticVersionPatch>
 
     <!-- 
@@ -14,11 +14,5 @@
       Update for every public release.
     -->
     <SemanticVersionDate>2018-02-21</SemanticVersionDate>
-
-    <!-- 
-      Pre-release version is used to distinguish internally built NuGet packages.
-      Pre-release version = Minutes since semantic version was set, divided by 5 (to make it fit in a UInt16).
-    -->
-    <PreReleaseVersion>$([MSBuild]::Divide($([System.DateTime]::Now.Subtract($([System.DateTime]::Parse($(SemanticVersionDate)))).TotalMinutes), 5).ToString('F0'))</PreReleaseVersion>
   </PropertyGroup>
 </Project>

@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright © Microsoft. All Rights Reserved.")]
 
 [assembly: ComVisible(false)]
-[assembly: InternalsVisibleTo("Microsoft.AI.Wcf.Tests.Net45, PublicKey=" + AssemblyInfo.PublicKey)]
+[assembly: InternalsVisibleTo("Microsoft.AI.Wcf.Tests.NET462, PublicKey=" + AssemblyInfo.PublicKey)]
 
 internal static class AssemblyInfo
 {

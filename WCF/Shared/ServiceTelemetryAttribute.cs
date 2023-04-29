@@ -18,12 +18,9 @@
     public sealed class ServiceTelemetryAttribute : Attribute, IServiceBehavior
     {
         /// <summary>
-        /// Gets or sets the Application Insights instrumentation key.
+        /// Gets or sets ConnectionString used in current version of Application Insights SDK to store telemetry data.
         /// </summary>
-        /// <remarks>
-        /// You can use this as an alternative to setting the key in the ApplicationInsights.config file.
-        /// </remarks>
-        public string InstrumentationKey { get; set; }
+        public string ConnectionString { get; set; }
 
         void IServiceBehavior.AddBindingParameters(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase, Collection<ServiceEndpoint> endpoints, BindingParameterCollection bindingParameters)
         {
@@ -33,15 +30,15 @@
         {
             try
             {
-                TelemetryConfiguration configuration = TelemetryConfiguration.Active;
-                if (!string.IsNullOrEmpty(this.InstrumentationKey))
+                var configuration = TelemetryConfiguration.Active;
+                if (!string.IsNullOrEmpty(this.ConnectionString))
                 {
-                    configuration.InstrumentationKey = this.InstrumentationKey;
+                    configuration.ConnectionString = this.ConnectionString;
                 }
 
                 var contractFilter = BuildFilter(serviceDescription);
                 WcfInterceptor interceptor = null;
-                foreach (ChannelDispatcher channelDisp in serviceHost.ChannelDispatchers)
+                foreach (var channelDisp in serviceHost.ChannelDispatchers.Cast<ChannelDispatcher>())
                 {
                     if (channelDisp.ErrorHandlers.OfType<WcfInterceptor>().Any())
                     {

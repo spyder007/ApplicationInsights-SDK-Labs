@@ -10,9 +10,9 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Microsoft.ApplicationInsights.Wcf</RootNamespace>
     <AssemblyName>Microsoft.AI.Wcf.NuGet</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <PackageSpecFile>$(MSBuildProjectDirectory)\Package.nuspec</PackageSpecFile>
-    <PackageVersionFile>$(BinRoot)\$(Configuration)\WCF\net45\Microsoft.AI.Wcf.dll</PackageVersionFile>
+    <PackageVersionFile>$(BinRoot)\$(Configuration)\WCF\net462\Microsoft.AI.Wcf.dll</PackageVersionFile>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
@@ -48,9 +48,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\net45\Microsoft.AI.Wcf.Net45.csproj">
+    <ProjectReference Include="..\net462\Microsoft.AI.Wcf.Net462.csproj">
       <Project>{2dbb5fb7-f219-4999-bdbb-25eb6355c808}</Project>
-      <Name>Microsoft.AI.Wcf.Net45</Name>
+      <Name>Microsoft.AI.Wcf.Net462</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

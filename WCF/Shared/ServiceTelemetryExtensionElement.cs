@@ -18,10 +18,10 @@
         /// <remarks>
         /// You can use this as an alternative to setting the instrumentation key in the ApplicationInsights.config file.
         /// </remarks>
-        public string InstrumentationKey
+        public string ConnectionString
         {
-            get { return (string)base["instrumentationKey"]; }
-            set { base["instrumentationKey"] = value; }
+            get { return (string)base["connectionString"]; }
+            set { base["connectionString"] = value; }
         }
 
         /// <summary>
@@ -43,7 +43,7 @@
                 {
                     this.properties = new ConfigurationPropertyCollection
                     {
-                        new ConfigurationProperty("instrumentationKey", typeof(string), string.Empty, ConfigurationPropertyOptions.None)
+                        new ConfigurationProperty("connectionString", typeof(string), string.Empty, ConfigurationPropertyOptions.None)
                     };
                 }
 
@@ -59,7 +59,7 @@
         {
             var behavior = new ServiceTelemetryAttribute()
             {
-                InstrumentationKey = this.InstrumentationKey
+                ConnectionString = this.ConnectionString
             };
             return behavior;
         }

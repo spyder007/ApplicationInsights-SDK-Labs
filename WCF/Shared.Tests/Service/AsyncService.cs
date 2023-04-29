@@ -5,7 +5,7 @@
     using System.ServiceModel;
     using System.Threading.Tasks;
 
-#if NET45
+#if NET462
     [ServiceTelemetry]
     public class AsyncService : IAsyncService
     {
@@ -37,7 +37,7 @@
                 {
                     await file.WriteLineAsync("This is a line " + i);
                     TelemetryClient client = new TelemetryClient();
-                    client.TrackDependency("File", tempFile, start, TimeSpan.FromSeconds(1), true);
+                    client.TrackDependency("File", "test", tempFile, start, TimeSpan.FromSeconds(1), true);
                 }
             }
 
@@ -45,5 +45,5 @@
             return "Some value";
         }
     }
-#endif // NET45
+#endif // NET462
 }

@@ -114,7 +114,7 @@
 
             var evt = TestTelemetryChannel.CollectedData().First();
             Assert.AreEqual("ISimpleService.CatchAllOperation", evt.Context.Operation.Name);
-            Assert.AreEqual("http://someaction", evt.Context.Properties["soapAction"]);
+            Assert.AreEqual("http://someaction", evt.Context.GlobalProperties["soapAction"]);
         }
 
         [TestMethod]
@@ -364,8 +364,10 @@
                 ISelectiveTelemetryService client = host.GetChannel();
                 using (var scope = new OperationContextScope((IContextChannel)client))
                 {
-                    var rootId = new RootIdMessageHeader();
-                    rootId.RootId = "rootId";
+                    var rootId = new RootIdMessageHeader
+                    {
+                        RootId = "rootId"
+                    };
                     OperationContext.Current.OutgoingMessageHeaders.Add(rootId);
                     client.OperationWithTelemetry();
                 }
